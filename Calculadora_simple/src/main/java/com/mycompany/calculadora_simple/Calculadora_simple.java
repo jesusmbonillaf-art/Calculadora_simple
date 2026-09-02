@@ -21,20 +21,18 @@ public class Calculadora_simple {
         char oper = calculadora.next().charAt(0);
         System.out.print("Introduzca el segundo numero: ");
         double num2 = calculadora.nextDouble();
-        if (oper == '+'){
-            System.out.println("Resultado de la suma: " + (num1 + num2));
-        } else if (oper == '-') {
-            System.out.println("Resultado de la resta: " + (num1 - num2));
-        } else if (oper == '*') {
-            System.out.println("Resultado de la multiplicacion: " + (num1 * num2));
-        } else if (oper == '/') {
-            if (num2 != 0) {
-                System.out.println("Resultado de la division: " + (num1 / num2));
-            } else {
-                System.out.println("No se puede dividir entre cero (0)");
+        switch (oper) {
+            case '+' -> System.out.println("Resultado de la suma: " + (num1 + num2));
+            case '-' -> System.out.println("Resultado de la resta: " + (num1 - num2));
+            case '*' -> System.out.println("Resultado de la multiplicacion: " + (num1 * num2));
+            case '/' -> {
+                if (num2 != 0) {
+                    System.out.println("Resultado de la division: " + (num1 / num2));
+                } else {
+                    System.out.println("No se puede dividir entre cero (0)");
+                }
             }
-        } else {
-            System.out.println("Operador no valido");
+            default -> System.out.println("Operador no valido");
         }
         calculadora.close();
     }
